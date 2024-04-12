@@ -2,12 +2,14 @@
 
 ### Practice
 
-**Exercise 0- DATABASES:**
-
-- **What are relational vs. non-relational databases?**
-
+**Exercise 0: DATABASE QUESTIONS**
+  
+- What role does a database play in a fullstack web application?
+- What is Postgres?
+- What is SQL?
+  
 **Exercise 1: SET UP**
-1. Install Postgres by following the steps listed in the [Launch School - Intro to SQL Book](https://launchschool.com/books/sql)
+- If you have not already, set up Postgres by following the [Postgres setup instructions](https://github.com/The-Marcy-Lab-School/postgres-setup).
 
 **Exercise 2: ACCESS COMMAND LINE**
 
@@ -19,8 +21,9 @@
 
 **Exercise 3: CREATE DATABASE AND CONNECT**
 - Create a database called `marcy` by running the command `create database marcy;`
-- **NOTE** the semi-colon is important for ending the execution of this command! Makes sure to include it.
+  - **NOTE** the semi-colon is important for ending the execution of this command! Makes sure to include it.
 - You have successfully created a database if your `psql` command line outputs `CREATE DATABASE`.
+  - If it didn't, you might just need to enter a `;` to complete the command.
 - Next, connect to your database by running the command `\c marcy`. Successfully connecting to your database will output `You are now connected to database "marcy" as user "[your username]"`.
 
 **Exercise 4: CREATE TABLES**
@@ -34,7 +37,7 @@
 **Exercise 5: BASIC QUERIES - POPULATE TABLES**
 
 - Give your table some data. Follow the Postgres documentation for [populating tables with rows](https://www.postgresql.org/docs/12/tutorial-populate.html).
-- Run the command `INSERT INTO lessons VALUES(1, 'data structures', 'ben');`
+- Run the command `INSERT INTO lessons VALUES(1, 'data structures', 'carmen');`
 - Input 5 more lessons using the same syntax for different lessons and instructors.
 
 **Exercise 6: BASIC QUERIES - SELECT DATA**
@@ -45,6 +48,6 @@
 
 **Exercise 7: MORE BASIC QUERIES**
 
-- pgexercises.com provides listings of simple SQL Queries. Keep your documentation handy.
+- http://pgexercises.com provides listings of simple SQL Queries. Keep your documentation handy.
 - Visit the [exercises](https://pgexercises.com/questions/basic/).
 - Solutions are embedded in the exercise app after you complete a prompt.
