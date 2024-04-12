@@ -37,7 +37,8 @@
 **Exercise 5: BASIC QUERIES - POPULATE TABLES**
 
 - Give your table some data. Follow the Postgres documentation for [populating tables with rows](https://www.postgresql.org/docs/12/tutorial-populate.html).
-- Run the command `INSERT INTO lessons VALUES(1, 'data structures', 'carmen');`
+- Run the command `INSERT INTO lessons VALUES('data structures', 'carmen');`
+- We only need to provide the lesson `title` and `instructor`. Why don't we need to provide the `id`?
 - Input 5 more lessons using the same syntax for different lessons and instructors.
 
 **Exercise 6: BASIC QUERIES - SELECT DATA**
@@ -47,6 +48,60 @@
 - **Write a reflection on the pros and cons of inputting and accessing data using the `INSERT` and `SELECT` commands.**
 
 **Exercise 7: MORE BASIC QUERIES**
+
+Get all data from the `title` and `instructor` columns in the `lessons` table:
+```sql
+SELECT title, instructor FROM lessons;
+```
+
+Get the title of each lesson, but only from the rows where the value in the `instructor` column is `'Ben'`:
+
+```sql
+SELECT title FROM lessons WHERE instructor='Ben';
+```
+
+Same as above, but now we are also including rows where the value in the `instructor` column is `'Gonzalo'`:
+
+```sql
+SELECT title FROM lessons WHERE instructor='Ben' OR instructor='Gonzalo';
+```
+
+Renaming queries with `AS`:
+
+```sql
+SELECT title AS "Course Title" FROM lessons;
+```
+
+Counting the number of rows in the `lessons` table:
+
+```sql
+SELECT COUNT(*) FROM lessons
+```
+
+Counting the number of lessons taught by `'Ben'`:
+
+```sql
+SELECT COUNT(*) FROM lessons WHERE instructor='Ben'
+```
+
+Collapsing columns with `GROUP BY`:
+
+```sql
+SELECT COUNT(*), instructor FROM lessons WHERE instructor='ben' GROUP BY instructor;
+```
+
+Update existing rows
+
+```sql
+UPDATE lessons SET instructor = 'Gonzalo' WHERE title = 'Data Structures';
+```
+
+Delete existing rows
+
+```sql
+DELETE FROM lessons WHERE title = 'Data Structures';
+```
+
 
 - http://pgexercises.com provides listings of simple SQL Queries. Keep your documentation handy.
 - Visit the [exercises](https://pgexercises.com/questions/basic/).
