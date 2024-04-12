@@ -1,36 +1,71 @@
 # 8-2-0 SQL and Databases
 
+We've learned how to build a server application using Express. It can serve the static assets for a frontend and can handle requests through an API. But the data is not persistent! 
+
+This week, we'll learn about the tools needed to build a truly "fullstack" web application with a proper database.
+
+Let's dive in!
+
 ## Table of Contents
 
+- [Table of Contents](#table-of-contents)
+- [Terms](#terms)
 - [What is a database?](#what-is-a-database)
-  - [What is a relational database](#what-is-a-relational-database)
+  - [What is Postgres?](#what-is-postgres)
+  - [What is a relational database?](#what-is-a-relational-database)
   - [Entity Relation Diagrams](#entity-relation-diagrams)
 - [What is SQL?](#what-is-sql)
   - [Tips to avoid errors](#tips-to-avoid-errors)
-- [Using PostgreSQL and SQL](#using-postgresql-and-sql)
+- [Using PostgreSQL and SQL Examples](#using-postgresql-and-sql-examples)
   - [Connecting to PSQL and Creating a DB](#connecting-to-psql-and-creating-a-db)
   - [Managing Tables](#managing-tables)
   - [CRUD Actions within a Table](#crud-actions-within-a-table)
-    - [Create - Adding Values to a Table](#create---adding-values-to-a-table)
+      - [Create - Adding Values to a Table](#create---adding-values-to-a-table)
     - [Read - Getting Values From a Table](#read---getting-values-from-a-table)
     - [Update - Modify Existing Rows](#update---modify-existing-rows)
     - [Delete - Deleting Existing Rows](#delete---deleting-existing-rows)
 
-### What is a database?
+## Terms
 
-A database is a structured collection of data.
+* **Fullstack** - refers to the combination of frontend (client-side) and backend (server-side) technologies.
+* **PERN** - an acronym for a specific set of technologies used to build a fullstack web application: Postgres, Express, React, and Node. This acronym is useful when asked "what stack do you use?"
+* **Database** - a structured collection of data that is organized in a manner for easy retrieval.
+* **Database Management System (DBMS)** - a piece of software used to create and maintain a database.
+* **Postgres** - a popular "relational" database management system that stores data in a table-like manner
+* **Table** - a collection of related data organized in rows and columns.
+  * A **row** represents a single object/instance/record in the table 
+  * A **column** represents a property/attribute/field of that object. Columns have data types such as integer, string, date, boolean, etc...
+* **SQL (Structured Query Language)** - a language used by relational database management systems to create, read, update, or delete data from a database.
 
-Database management systems (DBMSs) provide the tools for managing, querying, and analyzing data stored in the database.
 
-PostgreSQL is a popular **DBMS**.
+## What is a database?
+
+A **database** is a structured collection of data. The data could be stored in a file or in RAM. In the old days, it was stored on a physical "punch card".
+
+![a punch card](./img/punch-card.png)
+
+Nowadays, the data is often stored on a dedicated "database server" managed by a piece of software called a **database management system (DBMS)** such as Postgres, MongoDB, SQLite, MySQL, Firebird, Apache Cassandra, and many more.
+
+![client server database diagram](./img/client-server-database-diagram.svg)
+
+A server application can send queries to the DBMS using the **Structured Query Language (SQL)** and the DBMS responds with the requested data.
+
+By separating the database from the server application, we achieve greater separation of concerns:
+* The database layer is focused solely on managing and securing the data.
+* The application layer is focused solely on receiving client requests, retrieving the appropriate data from the database, and sending it back to the client.
+* If we need to update or restart the application server, the database server can continue running without losing the data.
+
+### What is Postgres?
+
+PostgreSQL is a popular "relational" DBMS that organizes its data in **tables**. Below is an example of a table with data about various films:
 
 ![](./img/film-table.png)
-
-A PostgreSQL database stores collections of data called **tables**. Above is an example of a table called `film`.
 
 Each table is made up of **rows** and **columns**.
 * Each row represents a single object/instance/record in the table 
 * Each column represents a property/attribute/field of that object. Columns have data types such as integer, string, date, or boolean.
+
+**Q: In JavaScript, how would this data be organized?**
 
 ### What is a relational database?
 
