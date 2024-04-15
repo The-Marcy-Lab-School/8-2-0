@@ -37,7 +37,7 @@
 **Exercise 5: BASIC QUERIES - POPULATE TABLES**
 
 - Give your table some data. Follow the Postgres documentation for [populating tables with rows](https://www.postgresql.org/docs/12/tutorial-populate.html).
-- Run the command `INSERT INTO lessons VALUES('data structures', 'carmen');`
+- Run the command `INSERT INTO lessons(title, instructor) VALUES ('data structures', 'carmen');`
 - We only need to provide the lesson `title` and `instructor`. Why don't we need to provide the `id`?
 - Input 5 more lessons using the same syntax for different lessons and instructors.
 
