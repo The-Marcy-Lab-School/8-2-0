@@ -26,6 +26,7 @@ Let's dive in!
 * **Table** - a collection of related data organized in rows and columns.
   * A **row** represents a single object/instance/record in the table 
   * A **column** represents a property/attribute/field of that object. Columns have data types such as integer, string, date, boolean, etc...
+  * A **primary key** serves as the unique identifier for a row in a table
 * **SQL (Structured Query Language)** - a language used by relational database management systems to create, read, update, or delete data from a database.
 
 
@@ -55,6 +56,7 @@ PostgreSQL is a popular "relational" DBMS that organizes its data in **tables**.
 Each table is made up of **rows** and **columns**.
 * Each row represents a single object/instance/record in the table 
 * Each column represents a property/attribute/field of that object. Columns have data types such as integer, string, date, or boolean.
+* Every table has a column called `id` (or `film_id` in this case) that serves as the **primary key** - a unique identifier for each row in the table.
 
 **Q: In JavaScript, how would this data be organized?**
 
@@ -110,6 +112,7 @@ This query will get all of the data from the films table.
 * **Table** - a collection of related data organized in rows and columns.
   * A **row** represents a single object/instance/record in the table 
   * A **column** represents a property/attribute/field of that object. Columns have data types such as integer, string, date, boolean, etc...
+  * A **primary key** serves as the unique identifier for a row in a table
 
 ![A film table showing data about films](./img/film-table.png)
 
