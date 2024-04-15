@@ -20,7 +20,7 @@
 - **What is does the `l` command output?**
 
 **Exercise 3: CREATE DATABASE AND CONNECT**
-- Create a database called `marcy` by running the command `create database marcy;`
+- Create a database called `marcy` by running the command `CREATE DATABASE marcy;`
   - **NOTE** the semi-colon is important for ending the execution of this command! Makes sure to include it.
 - You have successfully created a database if your `psql` command line outputs `CREATE DATABASE`.
   - If it didn't, you might just need to enter a `;` to complete the command.
